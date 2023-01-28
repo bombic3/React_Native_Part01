@@ -84,6 +84,9 @@ const FriendList = () => {
 }; */
 
 // Profile 만 클래스 컴포넌트로 작성해보기
+/* - React.Component 상속받기(extends)
+- render() 함수와 return() 함수 사용
+- props 받기 위해서는 this. 붙여주기 */
 class Profile extends React.Component {
   render() {
     return (
