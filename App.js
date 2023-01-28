@@ -66,7 +66,7 @@ const FriendList = () => {
   )
 };
 
-const Profile = (props) => {
+/* const Profile = (props) => {
   return (
     <View style={{ flexDirection: "row" }}>
       <Image
@@ -81,7 +81,27 @@ const Profile = (props) => {
       <Text>{ props.name }</Text>
     </View>
   )
-};
+}; */
+
+// Profile 만 클래스 컴포넌트로 작성해보기
+class Profile extends React.Component {
+  render() {
+    return (
+      <View style={{ flexDirection: "row" }}>
+        <Image
+          source={{
+            uri: this.props.uri,
+          }}
+          style={{
+            width: this.props.profileSize,
+            height: this.props.profileSize,
+          }}
+        />
+        <Text>{this.props.name}</Text>
+      </View>
+    );
+  }
+}
 
 export default function App() {
   return (
