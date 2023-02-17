@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Button, Switch } from "react-native";
+import { View, Text, Button, Switch, TextInput } from "react-native";
 
 const Component = () => {
   // 초기값 설정 (구조분해 문법을 통해 한줄로 줄임) - number, boolean, string
@@ -10,6 +10,7 @@ const Component = () => {
   // const setCount = result[1];
 
   const [isOn, setIsOn] = useState(false);
+  const [name, setName] = useState("");
 
 
   // inOn이라는 이름의 변수를 value값으로 넣어주고
@@ -29,6 +30,14 @@ const Component = () => {
       />
 
       <Text>------string 값 사용-----</Text>
+      <TextInput
+        value={name}
+        onChangeText={v => {
+          console.log('v', v);
+          setName(v);
+        }}
+        style={{ backgroundColor: "pink" }}
+      />
     </View>
     
   );
